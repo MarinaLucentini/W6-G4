@@ -3,6 +3,7 @@ const id = params.get("photoId");
 const imageDetails = document.getElementById("imageDetails");
 const autore = document.getElementById("Autors");
 const linkautore = document.getElementById("linkautors");
+const background = document.querySelector("body");
 console.dir(linkautore);
 const URL = " https://api.pexels.com/v1/photos/" + id;
 fetch(URL, {
@@ -22,10 +23,11 @@ fetch(URL, {
   })
   .then((images) => {
     console.log(images);
-    imageDetails.src = images.src.small;
+    imageDetails.src = images.src.large;
     autore.innerText = images.photographer;
     linkautore.href = images.photographer_url;
     linkautore.innerText = images.photographer_url;
+    background.style.background = images.avg_color;
   })
 
   .catch((err) => {

@@ -79,10 +79,8 @@
             <div class="col-sm-8 col-md-7 py-4 text-white">
               <h4>About</h4>
               <p class="text-gray">
-                Add some information about the album below, the author, or any
-                other background context. Make it a few sentences long so folks
-                can pick up some informative tidbits. Then, link them off to
-                some social networking sites or contact information.
+                Queste immagini sono state prese da una libreria di immagini.
+                Clicca sulla foto per aprire i dettagli dell'immagine
               </p>
             </div>
           </div>
@@ -166,45 +164,49 @@
           </div>
         </div>
       </section>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-md-4" id="card">
-            <!-- <div class="col-md-4">
-              <div class="card mb-4 shadow-sm" >
-                <img
-                  src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Lorem Ipsum</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div
+              class="modal fade"
+              id="ImageModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ModalLabel"></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="" alt="" id="modalImg" class="img-fluid" />
+                    <p class="text-gray" id="titleModal"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-4" id="card"></div>
         </div>
       </div>
     </main>
