@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   btnSecondo.addEventListener("click", (e) => {
     const URL = `https://api.pexels.com/v1/search?query=dog`;
     const row = document.getElementById("card");
+    row.innerHTML = " ";
     fetch(URL, {
       method: "GET",
       headers: {
@@ -16,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
       },
     })
       .then((response) => {
-        //   console.log(response);
+        console.log(response);
         if (response.ok) {
           return response.json();
         } else {
@@ -67,8 +68,15 @@ window.addEventListener("DOMContentLoaded", () => {
           BtnView.innerText = "View";
           BtnHide.innerText = "Hide";
           idImage.innerText = element.id;
+          idImage.innerText = element.id;
+
           BtnHide.addEventListener("click", () => {
             col.remove();
+          });
+          card.addEventListener("click", (event, id) => {
+            id = element.id;
+            event.currentTarget;
+            window.location.assign("./details.html?photoId=" + id);
           });
         });
       })
@@ -79,6 +87,7 @@ window.addEventListener("DOMContentLoaded", () => {
   btnPrimo.addEventListener("click", (e) => {
     const URL = `https://api.pexels.com/v1/search?query=cat`;
     const row = document.getElementById("card");
+    row.innerHTML = " ";
     fetch(URL, {
       method: "GET",
       headers: {
@@ -142,6 +151,11 @@ window.addEventListener("DOMContentLoaded", () => {
           BtnHide.addEventListener("click", () => {
             col.remove();
           });
+          card.addEventListener("click", (event, id) => {
+            id = element.id;
+            event.currentTarget;
+            window.location.assign("./details.html?photoId=" + id);
+          });
         });
       })
       .catch((err) => {
@@ -149,8 +163,9 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   });
   BtnCerca.addEventListener("click", (e) => {
-    const URL = `https://api.pexels.com/v1/search?query=${inputCerca.value}`;
     const row = document.getElementById("card");
+    row.innerHTML = " ";
+    const URL = `https://api.pexels.com/v1/search?query=${inputCerca.value}`;
     fetch(URL, {
       method: "GET",
       headers: {
@@ -213,6 +228,11 @@ window.addEventListener("DOMContentLoaded", () => {
           idImage.innerText = element.id;
           BtnHide.addEventListener("click", () => {
             col.remove();
+          });
+          card.addEventListener("click", (event, id) => {
+            id = element.id;
+            event.currentTarget;
+            window.location.assign("./details.html?photoId=" + id);
           });
         });
       })
